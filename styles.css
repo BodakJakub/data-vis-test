@@ -147,26 +147,95 @@ transform: rotateY(0deg);
     transform: translate(-59%, -33%);
 }
 
-.cards-wrapper.sorted .card {
-    transform: translate(50%, -50%) !important;
-}
-
 .cards-wrapper.sorted #card-01 {
     left: 0vw;
+    transform: translate(50%, -50%);
 }
 
 .cards-wrapper.sorted #card-02 {
     left: 20vw;
+    transform: translate(50%, -50%);
 }
 
 .cards-wrapper.sorted #card-03 {
     left: 40vw;
+    transform: translate(50%, -50%);
 }
 
 .cards-wrapper.sorted #card-04 {
     left: 60vw;
+    transform: translate(50%, -50%);
 }
 
 .cards-wrapper.sorted #card-05 {
     left: 80vw;
+    transform: translate(50%, -50%);
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+
+    .cards-wrapper.sorted #card-01 {
+        left: 10vw;
+        top: 278px;
+        transform: translate(0, -50%);
+    }
+    
+    .cards-wrapper.sorted #card-02 {
+        left: 50vw;
+        top: calc(278px);
+        transform: translate(-50%, -50%);
+    }
+    
+    .cards-wrapper.sorted #card-03 {
+        left: unset;
+        right: 10vw;
+        top: calc(278px);
+        transform: translate(0, -50%);
+    }
+    
+    .cards-wrapper.sorted #card-04 {
+        left: 20vw;
+        bottom: 278px;
+        transform: translate(0, 50%);
+    }
+    
+    .cards-wrapper.sorted #card-05 {
+        left: unset;
+        right: 20vw;
+        bottom: 278px;
+        transform: translate(0, 50%);
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    
+    .cards-wrapper.sorted .card {
+        transform: translate(50%, -50%);
+    }
+    
+    .cards-wrapper.sorted #card-01 {
+        left: 0;
+        top: 278px;
+    }
+    
+    .cards-wrapper.sorted #card-02 {
+        left: 0;
+        top: calc(278px * 3);;
+    }
+    
+    .cards-wrapper.sorted #card-03 {
+        left: 0;
+        top: calc(278px * 5);
+    }
+    
+    .cards-wrapper.sorted #card-04 {
+        left: 0;
+        top: calc(278px * 7);
+    }
+    
+    .cards-wrapper.sorted #card-05 {
+        left: 0;
+        top: calc(278px * 9);
+    }
 }

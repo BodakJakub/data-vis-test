@@ -1,4 +1,5 @@
 var cardWrapper;
+var sorted = false;
 
 var interval = setInterval(function() {
     if(document.readyState === 'complete') {
@@ -9,13 +10,13 @@ var interval = setInterval(function() {
 
 var init = function() {
     var cardWrapper = document.querySelector(".cards-wrapper");
-    var firstCard = document.querySelector("#card-01");
-    firstCard.addEventListener('click', function() {
-        cardWrapper.classList.add("sorted")
+    cardWrapper.addEventListener('click', function() {
+        cardWrapper.classList.add("sorted");
+        sorted = true;
     });
 
     var cards = document.querySelectorAll(".card");
-    cards.forEach(function(card, index) {
+    cards.forEach(function(card) {
         card.addEventListener("click", function(e) {
             toggleCard(card, cards);
         })
@@ -36,8 +37,14 @@ var init = function() {
 };
 
 var toggleCard = function(card, cards) {
-    cards.forEach(function(c) {
-        c.classList.remove("flipped");
-    })
-    card.classList.add("flipped");
+    if (sorted) {
+        if (card.classList.contains("flipped")) {
+            card.classList.remove("flipped");
+        } else {
+            cards.forEach(function(c) {
+                c.classList.remove("flipped");
+            })
+            card.classList.add("flipped");
+        }
+    }
 }
