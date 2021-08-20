@@ -1,0 +1,103 @@
+.card {
+    width: 184px;
+    height: 278px;
+    box-sizing: border-box;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    transition: all .8s;
+
+    cursor: pointer;
+}
+
+.card span {
+    color: #fff;
+
+    font-family: Roboto;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 70px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    perspective: 150rem;
+}
+
+.card-side {
+    height: 100%;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #192328;
+    border: 5px solid #ff002e;
+    box-shadow: 5px 5px 20px 0px #00000066;
+    border-radius: 10px;
+  }
+  
+  .card-side.back {
+    transform: rotateY(-180deg);
+}
+  
+.card:hover .card-side.front {
+    transform: rotateY(180deg);
+}
+  
+.card:hover .card-side.back {
+transform: rotateY(0deg);
+}
+
+#card-01 {
+    z-index: 5;
+    transform: translate(-59%, -50%);
+}
+#card-02 {
+    z-index: 4;
+    transform: translate(-61%, -57%);
+}
+#card-03 {
+    z-index: 3;
+    transform: translate(-45%, -48%);
+}
+#card-04 {
+    z-index: 2;
+    transform: translate(-68%, -61%);
+}
+#card-05 {
+    z-index: 1;
+    transform: translate(-59%, -33%);
+}
+
+.cards-wrapper.sorted .card {
+    transform: translate(50%, -50%) !important;
+}
+
+.cards-wrapper.sorted #card-01 {
+    left: 0vw;
+}
+
+.cards-wrapper.sorted #card-02 {
+    left: 20vw;
+}
+
+.cards-wrapper.sorted #card-03 {
+    left: 40vw;
+}
+
+.cards-wrapper.sorted #card-04 {
+    left: 60vw;
+}
+
+.cards-wrapper.sorted #card-05 {
+    left: 80vw;
+}
