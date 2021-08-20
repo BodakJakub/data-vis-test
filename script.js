@@ -19,6 +19,19 @@ var init = function() {
         card.addEventListener("click", function(e) {
             toggleCard(card, cards);
         })
+
+    });
+    
+    var cardContents = document.querySelectorAll(".card-side__content");
+    cardContents.forEach(function(cardContent) {
+        cardContent.addEventListener("scroll", function() {
+            
+            if( cardContent.scrollTop === (cardContent.scrollHeight - cardContent.offsetHeight)) {
+                cardContent.classList.add("scrolled");
+            } else {
+                cardContent.classList.remove("scrolled");
+            }
+        });
     })
 };
 
