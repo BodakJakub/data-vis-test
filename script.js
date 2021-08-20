@@ -9,13 +9,22 @@ var interval = setInterval(function() {
 
 var init = function() {
     var cardWrapper = document.querySelector(".cards-wrapper");
-    console.log(cardWrapper)
     var firstCard = document.querySelector("#card-01");
     firstCard.addEventListener('click', function() {
-        if (cardWrapper.classList.contains("sorted")) {
-            cardWrapper.classList.remove("sorted")
-        } else {
-            cardWrapper.classList.add("sorted")
-        }
+        cardWrapper.classList.add("sorted")
     });
+
+    var cards = document.querySelectorAll(".card");
+    cards.forEach(function(card, index) {
+        card.addEventListener("click", function(e) {
+            toggleCard(card, cards);
+        })
+    })
 };
+
+var toggleCard = function(card, cards) {
+    cards.forEach(function(c) {
+        c.classList.remove("flipped");
+    })
+    card.classList.add("flipped");
+}
